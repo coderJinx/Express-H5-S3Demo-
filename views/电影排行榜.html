@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            height: 450px;
+            width: 300px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .box>h1{
+            font-size: 20px;
+            line-height: 35px;
+            color: cadetblue;
+            padding-left: 10px;
+            border-bottom: 1px dashed #ccc;
+        }
+        .box>ul>li{
+            list-style: none;
+            padding: 5px 10px;
+            border: 1px dashed #ccc;
+        }
+        ul>li:nth-child(-n+3) span{
+            background-color: rgb(51, 3, 97);
+        }
+        ul>li>span{
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            background-color: rgb(149, 91, 224);
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+        }
+        .content{
+            overflow: hidden;
+            display: none;
+        }
+        .content>img{
+            width: 80px;
+            height: 120px;
+            float: left;
+        }
+        .content>p{
+            float: right;
+            width: 180px;
+            height: 120px;
+            line-height: 20px;
+        }
+        .show .content{
+            display: block;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('li').mouseenter(function(){
+                $(this).addClass('show');
+            })
+            $('li').mouseleave(function(){
+                $(this).removeClass('show');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1>电影排行榜</h1>
+        <ul>
+            <li><span>1</span>电影名称
+                <div class="content">
+                    <img src="https://www.bootcdn.cn/assets/img/bootstrap.svg?1575749627099">
+                    <p>Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  Bootstrap  </p>
+                </div>
+            </li>
+            <li><span>2</span>电影名称
+                <div class="content">
+                    <img src="https://www.bootcdn.cn/assets/img/react.svg?1575749627099">
+                    <p>react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  react  </p>
+                </div>
+            </li>
+            <li><span>3</span>电影名称
+                <div class="content">
+                    <img src="https://www.bootcdn.cn/assets/img/backbone-icon.svg?1575749627099">
+                    <p>Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  Backbone  </p>
+                </div>
+            </li>
+            <li><span>4</span>电影名称</li>
+            <li><span>5</span>电影名称</li>
+            <li><span>6</span>电影名称</li>
+        </ul>
+    </div>
+</body>
+</html>

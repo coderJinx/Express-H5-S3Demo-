@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: none;
+        }
+        /* img{
+            display: inline-block;
+        } */
+        div>span{
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+    <script>
+        $(function(){
+            const timer = setTimeout(function(){
+                // $('div').slideDown(1000, function(){
+                //     $('div').fadeOut(1000, function(){
+                //         $('div').fadeIn(1000);
+                //     });
+                // });
+                $('div').stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
+            },2000);
+            $('span').click(function(){
+                $('div').remove();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <img src="https://www.bootcdn.cn/assets/img/jquery.svg?1575749627099">
+        <span></span>
+    </div>
+</body>
+</html>

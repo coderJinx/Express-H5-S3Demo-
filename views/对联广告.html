@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .ad-left{
+            float: left;
+            position: fixed;
+            top: 200px;
+            left: 0;
+        }
+        .ad-right{
+            float: right;
+            position: fixed;
+            top: 200px;
+            right: 0;
+        }
+        img{
+            display: none;
+        }
+    </style>
+    <script>
+        $(function(){
+            //监听网页滚动
+            $(window).scroll(function(){
+                //获取网页滚动的偏移位
+                const offset = $('html, body').scrollTop();
+                if(offset >= 300 ){
+                    $('img').show(800);
+                }
+                if(offset <= 299 ){
+                    $('img').hide(800);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="https://www.bootcdn.cn/assets/img/backbone-icon.svg?1575749627099" class="ad-left">
+    <img src="https://www.bootcdn.cn/assets/img/backbone-icon.svg?1575749627099" class="ad-right">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

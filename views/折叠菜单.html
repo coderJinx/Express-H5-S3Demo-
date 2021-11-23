@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            list-style: none;
+            width: 300px;
+            margin: 100px auto;
+        }
+        .nav>li{
+            border: 1px solid #000;
+            line-height: 35px;
+            border-bottom: none;
+            text-indent: 2em;
+            position: relative;
+        }
+        .nav>li:last-child{
+            border-bottom: 1px solid #000;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        .nav.nav>li:first-child{
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+        .nav>li>span{
+            background: url('https://www.bootcdn.cn/assets/img/vue.svg?1575749627099') center center;
+            display: inline-block;
+            width: 32px;
+            height: 34px;
+            position: absolute;
+            right: 10px;
+        }
+        .sub{
+            display: none;
+        }
+        .sub>li{
+            list-style: none;
+            background-color: rgb(150, 233, 205);
+            border-bottom: 1px solid #fff;
+        }
+        .sub>li:hover{
+            background-color: antiquewhite;
+        }
+        .nav>.rot>span{
+            transform: rotate(90deg);
+        }
+    </style>
+    <script>
+        
+        $(function(){
+            let count = 0;
+            $('.nav>li').click(function(){
+                count++;
+                //拿到二级菜单
+                console.log(count);
+                const $sub = $(this).children('.sub');
+                if(count%2 == 1){
+                    $sub.slideDown(800);
+                }
+                else{
+                    $sub.slideUp(800);
+                }
+                //拿到所有非当前的二级菜单
+                const otherSub = $(this).siblings().children('.sub');
+                otherSub.slideUp(800);
+
+                $(this).addClass('rot');
+                $(this).siblings().removeClass('rot');
+            }); 
+        });
+    </script>
+</head>
+<body>
+    <ul class="nav">
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+            </ul>
+        </li>
+        <li>一级菜单<span></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

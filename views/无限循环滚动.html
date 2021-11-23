@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 568px;
+            width: 640px;
+            border: 1px solid #000;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+        ul{
+            list-style: none;
+            height: 568px;
+            width: 1920px;
+            background-color: #000;
+        }
+        ul>li{
+            float: left;
+            
+        }
+        ul>li>img{
+            height: 568px;
+            width: 320px;
+        }
+    </style>
+    <script>
+        $(function(){
+            let count = 0;
+            let timer;
+            function autoPlay(){
+                timer = setInterval(function () {
+                    count += -1;
+                    if (count <= -1280) {
+                        count = 0;
+                    }
+                    $('ul').css('marginLeft', count);
+                }, 20);
+            }
+            autoPlay();
+            $('li').hover(function(){
+                clearInterval(timer);
+                // $(this).siblings().css('opacity', '0.5');
+                //给非当前选择添加蒙版
+                $(this).stop().siblings().fadeTo(100, 0.5);
+                //去除当前选中的蒙版
+                $(this).stop().fadeTo(100, 1);
+            }, function () {
+                autoPlay();
+                //去除所有蒙版
+                $('li').stop().fadeTo(100, 1);
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="../img/gd-1.jpg"></li>
+            <li><img src="../img/gd-2.jpg"></li>
+            <li><img src="../img/gd-3.jpg"></li>
+            <li><img src="../img/gd-4.jpg"></li>
+            <li><img src="../img/gd-1.jpg"></li>
+            <li><img src="../img/gd-2.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>

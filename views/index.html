@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: rgba(0, 0, 0, 0.78);
+    }
+    .content{
+        display: flex;
+        margin-top: 20px;
+    }
+    .content div{
+        margin-left: 10px;
+        flex: 1;
+        height: 50px;
+        width: 80px;
+        background-color: chocolate;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 4px;
+    }
+    .content div:last-child{
+        margin-right: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .Box2{
+        width: 300px;
+        height: 300px;
+        margin: 150px auto;
+        position: relative;
+        /* 保留3d效果 */
+        transform-style: preserve-3d;
+        transform: rotate3d(1, 1, 0, 30deg);
+        /* 景深 */
+        /*perspective: 0px; */
+        /* 透视 */
+        perspective-origin: 0px 0px;
+
+    }
+    .Box2 div{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        opacity: 0.5;
+
+    }
+    .front{
+        background-color: aliceblue;
+        transform: translateZ(150px);
+    }
+    .back{
+        background-color: rgb(44, 103, 155);
+        transform: translateZ(-150px) rotateY(180deg);
+    }
+    .left{
+        background-color: rgb(41, 223, 41);
+        transform: translateX(-150px) rotateY(-90deg);
+    }
+    .right{
+        background-color: rgb(126, 19, 158);
+        transform: translateX(150px) rotateY(90deg);
+    }
+    .top{
+        background-color: rgb(165, 15, 73);
+        transform: translateY(-150px) rotateX(90deg);
+    }
+    .bottom{
+        background-color: rgb(218, 175, 36);
+        transform: translateY(150px) rotateX(-90deg);
+    }
+</style>
+<script>
+    $(function () {
+        let angle = 30
+        function autoPlay() {
+            setInterval(function (){
+                angle += 0.2
+                $('.Box2').css({
+                    transform: 'rotate3d(1, 1, 0, '+angle+'deg)'
+                })
+            }, 40)
+        }
+        autoPlay()
+    })
+</script>
+<body>
+    <div class="content">
+        <div><a href="/icon">图标特效</a></div>
+        <div><a href="/antitheticalAd">对联广告</a></div>
+        <div><a href="/alertAd">弹窗广告</a></div>
+        <div><a href="/foldMenu">折叠菜单</a></div>
+        <div><a href="/cyclicScrolling">无限循环滚动</a></div>
+        <div><a href="/movieRanking">电影排行榜</a></div>
+    </div>
+    <div class="box">
+        <div class="Box2">
+            <div class="front">front</div>
+            <div class="back">back</div>
+            <div class="left">left</div>
+            <div class="right">right</div>
+            <div class="top">top</div>
+            <div class="bottom">bottom</div>
+        </div>
+    </div>
+</body>
+</html>
